@@ -4,7 +4,7 @@
 
 Intro To Unity
 =============
-This repo holds the source code for the "Intro To Unity" online course.
+This repo holds the source-code for the "Intro To Unity" online course.
 
 The course instructor Samuel Asher Rivello  asks that students have the latest public version of Unity installed before the first day of the course. It is freely available for Mac and Windows at https://unity3d.com/get-unity/download. The "Hub" option is recommended but not required. 
 
