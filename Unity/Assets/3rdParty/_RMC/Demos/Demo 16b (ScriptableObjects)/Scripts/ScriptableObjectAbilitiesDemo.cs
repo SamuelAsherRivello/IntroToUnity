@@ -1,33 +1,35 @@
 ﻿using UnityEngine;
 
-namespace RMC.IntroToUnity.Demos.ScriptableObjects
+namespace RMC.IntroToUnity.Demos.ScriptableObjects.B
 {
 	//  Namespace Properties ------------------------------
 	//  Class Attributes ----------------------------------
 
 	/// <summary>
-	/// Show off the data type
+	/// Show off the data type with 
+	/// a custom "Execute" method within.
 	/// </summary>
-	[CreateAssetMenu(fileName = FileName, menuName = MenuItem, order = 0)]
-	public class MySO : ScriptableObject
+	public class ScriptableObjectAbilitiesDemo : MonoBehaviour
 	{
 		//  Properties -----------------------------------
-		public int Age {  get { return _age;  }  }
-		public string FirstName { get { return _firstName; }  }
 
 		//  Fields ---------------------------------------
-		private const string FileName = "MySO";
-		private const string MenuItem = "Demos/ScriptableObjects/Create New " + FileName;
-
 		[SerializeField]
-		private int _age = 0;
-
-		[SerializeField]
-		private string _firstName = "";
+		private BaseAbilitySO _mySO = null;
 
 		//  Initialization -------------------------------
 
 		//  Unity Methods   ------------------------------
+		protected void Awake()
+		{
+			// Use Custom Data Values
+			Debug.Log($"Awake()");
+			Debug.Log($"_mySO.Damage = {_mySO.Damage}");
+			Debug.Log($"_mySO.DisplayName = {_mySO.DisplayName}");
+
+			// Use Method Implementation
+			_mySO.Execute();
+		}
 
 		//  Other Methods --------------------------------
 

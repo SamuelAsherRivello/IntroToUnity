@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RMC.IntroToUnity.Demos.ScriptableObjects
+namespace RMC.IntroToUnity.Demos.ScriptableObjects.B
 {
 	//  Namespace Properties ------------------------------
 	//  Class Attributes ----------------------------------
@@ -8,24 +8,29 @@ namespace RMC.IntroToUnity.Demos.ScriptableObjects
 	/// <summary>
 	/// Show off the data type
 	/// </summary>
-	public class ScriptableObjectDemo : MonoBehaviour
+	public class BaseAbilitySO : ScriptableObject
 	{
 		//  Properties -----------------------------------
+		public virtual int Damage {  get { return _damage;  }  }
+		public virtual string DisplayName { get { return _displayName; }  }
 
 		//  Fields ---------------------------------------
+
 		[SerializeField]
-		private MySO _mySO = null;
+		private int _damage = 0;
+
+		[SerializeField]
+		private string _displayName = "";
 
 		//  Initialization -------------------------------
 
 		//  Unity Methods   ------------------------------
-		protected void Awake()
-		{
-			Debug.Log("Awake() _mySO.Age=" + _mySO.Age);
-			Debug.Log("Awake() _mySO.FirstName=" + _mySO.FirstName);
-		}
 
 		//  Other Methods --------------------------------
+		public virtual void Execute()
+		{
+			// Override method to do something...
+		}
 
 		//  Event Handlers -------------------------------
 	}
